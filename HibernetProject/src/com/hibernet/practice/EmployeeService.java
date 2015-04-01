@@ -1,5 +1,6 @@
 package com.hibernet.practice;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.ObjectNotFoundException;
@@ -16,6 +17,11 @@ public class EmployeeService {
 		Employee employee = new Employee();
 		employee.setFirstName(firstName);
 		employee.setLastName(lastName);
+		List<Ceritificate> ceritificates = new ArrayList<Ceritificate>();
+		Ceritificate ceritificate = new Ceritificate();
+		ceritificate.setName("Graduation");
+		ceritificates.add(ceritificate);
+		employee.setCertificates(ceritificates);
 		createEmployee(employee);
 		return employee;
 	}
@@ -96,15 +102,15 @@ public class EmployeeService {
 		
 	}
 	
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		EmployeeService sd = new EmployeeService();
-		//sd.createEmployee(sd.buildEmployee("Neha", "Das"));
+		sd.createEmployee("Ashish", "Kapoor");
 		//sd.findEployeeById(1);
 	//	sd.findEployeeById(2);
 		//sd.findEployeeById(12);
 		//sd.updateEmployeeData(15, "Partha", "Das");
-		sd.deleteEmployeeData(1);
-	}*/
+		//sd.deleteEmployeeData(1);
+	}
 
 }

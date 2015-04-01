@@ -1,5 +1,7 @@
 package com.hibernet.practice;
 
+import java.util.List;
+
 public class Employee {
 
 	
@@ -21,8 +23,16 @@ public class Employee {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
+	public List<Ceritificate> getCertificates() {
+		return certificates;
+	}
+	public void setCertificates(List<Ceritificate> certificates) {
+		this.certificates = certificates;
+	}
 	public Integer id;
 	public String firstName,lastName;
+	private List<Ceritificate> certificates;
 	
 	
 	

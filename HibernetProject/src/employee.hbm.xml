@@ -10,9 +10,20 @@
 <id name = "id">
 <generator class="increment"></generator>
 </id>
-
+<list name="certificates" cascade="all">
+ <key column="employee_id"></key>
+ <list-index column="idx"></list-index>
+ <one-to-many class="com.hibernet.practice.Ceritificate"/>
+</list>
 <property name="firstName"></property>
 <property name="lastName"></property>
+</class>
+
+<class name="com.hibernet.practice.Ceritificate" table="CERTIFICATE">
+	<id name="id">
+         <generator class="increment"/>
+     </id>
+   <property name="name" column="certificate_name" type="string"/>
 </class>
 
 </hibernate-mapping>
